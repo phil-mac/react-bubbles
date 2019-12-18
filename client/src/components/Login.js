@@ -1,11 +1,10 @@
-import React from "react";
+import React, {useState} from "react";
 import axios from 'axios';
 
 const Login = (props) => {
   // make a post request to retrieve a token from the api
   // when you have handled the token, navigate to the BubblePage route
-
-  const credentials = { username: 'Lambda School', password: 'i<3Lambd4' };
+  const [credentials, setCredentials] = useState({ username: 'Lambda School', password: 'i<3Lambd4' })
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -26,10 +25,19 @@ const Login = (props) => {
     })
   }
 
+  const handleChange = e => {
+    setCredentials({
+      ...credentials,
+      [e.target.name]: e.target.value
+    })
+  }
+
   return (
-    <form onSubmit={handleSubmit}>
-      <h1>Login</h1>
-      <button>Log in as Admin</button>
+    <form onSubmit={handleSubmit} className='bubble-wrap'>
+      <h2>Bubles!</h2>
+      <input type='text' name='username' placeholder='Username' onChange={handleChange} value={credentials.username} />
+      <input type='password' name='password' placeholder='' onChange={handleChange} value={credentials.password} />
+      <button>Log in</button>
     </form>
   );
 };
