@@ -42,7 +42,7 @@ Demonstrate your understanding of this Sprint's concepts by answering the follow
 
 - [ ] Which HTTP methods can be mapped to the CRUD acronym that we use when interfacing with APIs/Servers.
 
-  PUSH = Create, GET = Retrieve, PUT = Update, DELETE = ... Delete
+  POST = Create, GET = Retrieve, PUT = Update, DELETE = ... Delete
 
 ## Project Set Up
 
